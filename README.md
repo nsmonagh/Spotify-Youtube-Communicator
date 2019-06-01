@@ -1,1 +1,1 @@
-# Spotify-Youtube-Communicator
+# Spotify-YouTube-Communicator

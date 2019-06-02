@@ -1,21 +1,25 @@
 {
-    "author": "Noah Monaghan",
-    "background": {
-        "persistent": false,
-        "scripts": [
-            "background.js"
-        ]
-    },
-    "description": "Open up featured songs from YouTube videos onto Spotify.",
-    "icons": {
-        "16": "images/image16.png",
-        "32": "images/image32.png",
-        "48": "images/image48.png",
-        "128": "images/image128.png"
-    },
-    "incognito": "spanning",
-    "manifest_version": 2,
-    "name": "Songs on YouTube to Spotify",
-    "offline_enabled": false,
-    "version": "1.0"
+  "author":"Noah Monaghan",
+  "content_scripts":[
+    {
+      "matches":[
+        "*://www.youtube.com/watch?*v=*"
+      ],
+      "js":[
+        "jquery.js",
+        "content.js"
+      ],
+      "run_at":"document_end"
+    }
+  ],
+  "description":"Open up featured songs from YouTube videos onto Spotify.",
+  "icons":{
+    "16":"images/image16.png",
+    "32":"images/image32.png",
+    "48":"images/image48.png",
+    "128":"images/image128.png"
+  },
+  "manifest_version":2,
+  "name":"Songs on YouTube to Spotify",
+  "version":"1.0"
 }

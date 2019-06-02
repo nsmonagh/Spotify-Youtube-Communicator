@@ -1,7 +1,20 @@
-/*let button = document.createElement("button");
-button.type = "button";
-button.innerHTML = "spotify";
-document.querySelector("#menu").appendChild(button);*/
+function makeButton(jNode) {
+  $.ajax({
+    url: 'https://vast-hamlet-63420.herokuapp.com/images/spotify.png',
+    type: 'get',
+    dataType: 'html',
+    async: false,
+    crossDomain: 'true',
+    success: function(data, status) {
+      $("<input type='image' src=" + data + "/>").click(function() {
+        console.log("hello world!!");
+      }).appendTo(jNode);
+    }
+  });
+}
+
+waitForKeyElements('#menu > ytd-menu-renderer', makeButton);
+
 let video_id = window.location.search.split('v=')[1];
 let ampersandPosition = video_id.indexOf('&');
 if (ampersandPosition != -1) {
@@ -9,10 +22,14 @@ if (ampersandPosition != -1) {
 }
 
 let url = 'https://www.youtube.com/watch?v=' + video_id;
-
 $.getJSON('https://noembed.com/embed', {
   format: 'json',
   url: url
 }, function(data) {
-  alert(data.title);
+  console.log(data.title);
 });
+
+$.getJSON('https://api.spotify.com/v1/search?q=track%3Anumb+artist%3Alinkin+park&type=track',
+  function(data) {
+    console.log(data);
+  });

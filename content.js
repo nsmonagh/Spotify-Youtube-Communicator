@@ -3,8 +3,6 @@ function makeButton(jNode) {
     url: 'https://vast-hamlet-63420.herokuapp.com/images/spotify.png',
     type: 'get',
     dataType: 'html',
-    async: false,
-    crossDomain: 'true',
     success: function(data, status) {
       $("<input type='image' src=" + data + "/>").click(function() {
         console.log("hello world!!");

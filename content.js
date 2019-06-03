@@ -1,14 +1,7 @@
 function makeButton(jNode) {
-  $.ajax({
-    url: 'https://vast-hamlet-63420.herokuapp.com/images/spotify.png',
-    type: 'get',
-    dataType: 'html',
-    success: function(data, status) {
-      $("<input type='image' src=" + data + "/>").click(function() {
-        console.log("hello world!!");
-      }).appendTo(jNode);
-    }
-  });
+  $("<input type='image' src='https://vast-hamlet-63420.herokuapp.com/images/spotify.png'/>").click(function() {
+    console.log("hello world!!");
+  }).appendTo(jNode);
 }
 
 waitForKeyElements('#menu > ytd-menu-renderer', makeButton);

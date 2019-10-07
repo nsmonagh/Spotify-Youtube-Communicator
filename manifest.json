@@ -5,11 +5,11 @@
       "js":[
         "js/jquery.js",
         "js/waitForKeyElements.js",
-        "js/spotify-web-api.js",
-        "js/script.js"
+		"js/spotify-web-api.js",
+		"js/content_script.js"
       ],
       "matches":[
-        "*://www.youtube.com/watch?*v=*"
+        "*://*.youtube.com/*"
       ],
       "run_at":"document_end"
     }
@@ -25,7 +25,7 @@
   "name":"Songs on YouTube to Spotify",
   "version":"1.0",
   "web_accessible_resources":[
-    "images/spotify32.png",
-	"script.py"
+	"images/gray_spotify32.png",
+	"images/spotify32.png"
   ]
 }
